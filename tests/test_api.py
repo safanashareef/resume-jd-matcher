@@ -25,3 +25,21 @@ def test_match_empty_resume_returns_400():
         "/match", json={"resume_text": "", "jd_text": "Python"}
     )
     assert response.status_code == 400
+
+
+def test_match_pdf_rejects_non_pdf():
+    response = client.post(
+        "/match-pdf",
+        files={"resume": ("resume.txt", b"hello", "text/plain")},
+        data={"jd_text": "Python"},
+    )
+    assert response.status_code == 400
+
+
+def test_match_pdf_rejects_corrupt_pdf():
+    response = client.post(
+        "/match-pdf",
+        files={"resume": ("resume.pdf", b"not a real pdf", "application/pdf")},
+        data={"jd_text": "Python"},
+    )
+    assert response.status_code == 400
