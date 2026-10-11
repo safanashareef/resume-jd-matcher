@@ -10,7 +10,7 @@ A FastAPI service that scores a resume against a job description and lists match
 - 12 pytest tests, run automatically by GitHub Actions on every push
 
 ## Tech stack
-Python, FastAPI, scikit-learn, pytest, GitHub Actions
+Python, FastAPI, scikit-learn, pytest, Docker, GitHub Actions
 
 ## Run locally
 ```bash
@@ -51,5 +51,5 @@ pytest -v
 
 ## Known limitations and next steps
 - Skills come from a fixed list, so uncommon skills are not detected
-- Plain-text input only; PDF resume upload is planned
-- Planned: LLM-based suggestions for rewriting resume bullets, Docker setup, deployed demo
+- Text-based PDF resumes only (scanned image PDFs are not supported)
+- Planned: LLM-based suggestions for rewriting resume bullets, deployed demo
