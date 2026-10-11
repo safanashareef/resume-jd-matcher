@@ -8,6 +8,11 @@ SKILLS = [
     "algorithms", "multithreading", "power bi", "excel", "pandas", "numpy",
     "scikit-learn", "machine learning", "genai", "llm", "rag", "devops",
     "unit testing", "debugging", "troubleshooting", "sdlc",
+    "golang", "scala", "rust", "kotlin", "kafka", "redis", "terraform",
+    "ansible", "spark", "hadoop", "elasticsearch", "graphql", "serverless",
+    "lambda", "ec2", "s3", "distributed systems", "design patterns",
+    "system design", "tdd", "bash", "shell scripting", "networking",
+    "operating systems", "cloud computing", "ci", "cd",
 ]
 
 # alias -> canonical skill name
