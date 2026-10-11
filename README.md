@@ -5,8 +5,9 @@ A FastAPI service that scores a resume against a job description and lists match
 ## Features
 - Keyword extraction against a curated tech-skills list, with aliases (JS → JavaScript, Postgres → PostgreSQL)
 - Match score: 70% keyword overlap + 30% TF-IDF cosine similarity (scikit-learn)
+- PDF resume upload via `POST /match-pdf`
 - Input validation with clear 400 errors
-- 10 pytest tests, run automatically by GitHub Actions on every push
+- 12 pytest tests, run automatically by GitHub Actions on every push
 
 ## Tech stack
 Python, FastAPI, scikit-learn, pytest, GitHub Actions
@@ -35,6 +36,12 @@ Response:
   "matched_keywords": ["git", "python", "rest api", "sql"],
   "missing_keywords": ["aws", "docker"]
 }
+```
+
+## Run with Docker
+```bash
+docker build -t resume-jd-matcher .
+docker run -p 8000:8000 resume-jd-matcher
 ```
 
 ## Run tests
